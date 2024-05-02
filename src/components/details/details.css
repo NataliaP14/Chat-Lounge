@@ -1,0 +1,101 @@
+.details {
+   flex: 1;
+
+   .user {
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      border-bottom: 1px solid #dddddd35;
+
+      img {
+         width: 100px;
+         height: 100px;
+         object-fit: cover;
+         border-radius: 50%;
+      }
+   }
+
+   .info {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      .option {
+
+         .title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+           
+
+            img {
+               cursor: pointer;
+               width: 30px;
+               height: 30px;
+               
+            }
+         }
+         .photos {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 20px;
+
+            .photoItem {
+               display: flex;
+               justify-content: space-between;
+               align-items: center;
+
+               .icon {
+                  cursor: pointer;
+                  width: 20px;
+                  height: 20px;
+               }
+
+               .photoDetail {
+                  display: flex;
+                  align-items: center;
+                  gap: 20px;
+
+                  img {
+                     height: 40px;
+                     width: 40px;
+                     border-radius: 5px;
+                     object-fit: cover;
+                  }
+
+                  span {
+                     color: lightgray;
+                     font-size: 14px;
+                     font-weight: 300;
+                  }
+
+               }
+            }
+            
+         }
+      }
+      button {
+         padding: 10px 20px;
+         background-color: rgba(17,25,30,0.5);
+         color: rgb(255, 255, 255); 
+         border: none;
+         border-radius: 5px;
+         cursor: pointer;
+         &:hover {
+            background-color: rgba(255, 0, 51, 0.553);;
+         }
+         &.logout {
+            padding: 10px;
+            background-color: rgba(17,25,30,0.5);
+            &:hover {
+               background-color: #5183fe;
+            }
+            
+         }
+      }
+   }
+}
