@@ -1,6 +1,8 @@
 import "./login.css";
 import { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth, db } from "../../lib/firebase";
+import { doc, setDoc } from "firebase/firestore";
 
 const Login = () => {
     const [avatar, SetAvatar] = useState({
@@ -30,7 +32,26 @@ const Login = () => {
         const {username, email,password} = Object.fromEntries(formData);
 
         try {
+            //creating an account and putting in database
             const response = await createUserWithEmailAndPassword(auth, email, password)
+
+            await setDoc(doc(db, "users", response.user.uid), {
+                username,
+                email,
+                id: response.user.uid,
+                blocked:[],
+
+            });
+
+            //same with userchats
+            await setDoc(doc(db, "userchats", response.user.uid), {
+                chats: [],
+
+            });
+
+
+            toast.success("Account created!")
+
         } catch(error) {
             console.log(error)
             toast.error(error.message)
