@@ -4,7 +4,7 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "fire
 import { auth, db } from "../../lib/firebase";
 import { doc, setDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
-import upload from "../../lib/upload";
+import upload  from "../../lib/upload";
 
 
 const Login = () => {
