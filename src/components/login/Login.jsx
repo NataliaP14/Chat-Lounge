@@ -3,6 +3,8 @@ import { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "../../lib/firebase";
 import { doc, setDoc } from "firebase/firestore";
+import { toast } from "react-toastify";
+
 
 const Login = () => {
     const [avatar, SetAvatar] = useState({
@@ -33,11 +35,14 @@ const Login = () => {
 
         try {
             //creating an account and putting in database
-            const response = await createUserWithEmailAndPassword(auth, email, password)
+            const response = await createUserWithEmailAndPassword(auth, email, password);
+
+            const imgUrl = await upload(avatar.file);
 
             await setDoc(doc(db, "users", response.user.uid), {
                 username,
                 email,
+                avatar: imgUrl,
                 id: response.user.uid,
                 blocked:[],
 
