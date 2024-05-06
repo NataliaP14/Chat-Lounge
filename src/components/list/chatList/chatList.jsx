@@ -1,9 +1,27 @@
 import "./chatList.css"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AddUser from "./addUser/Adduser";
+import { useUserStore } from "../../../lib/userStore";
+import { onSnapshot, doc } from "firebase/firestore";
+import { db } from "../../../lib/firebase";
+
 
 const ChatList = () => {
   const [addMode, setAddMode] = useState(false);
+  const [chats, setChats] = useState([]);
+
+  const {currentUser} = useUserStore();
+  useEffect (() => {
+    const unSub = onSnapshot(doc(db, "userchats", currentUser.id), (doc) => {
+      console.log("Current Data: ", doc.data());
+    });
+
+    return () => {
+      unSub();
+    }
+  }, []);
+
+
     return (
       <div className='chatList'>
         <div className="search">
