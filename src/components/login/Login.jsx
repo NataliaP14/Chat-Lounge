@@ -8,7 +8,7 @@ import upload  from "../../lib/upload";
 
 
 const Login = () => {
-    const [avatar, SetAvatar] = useState({
+    const [avatar, setAvatar] = useState({
         file: null,
         url:""
     })
@@ -19,7 +19,7 @@ const Login = () => {
 
     const handleAvatar = e => {
         if (e.target.files[0]) {
-        SetAvatar({
+        setAvatar({
             file:e.target.files[0],
             url:URL.createObjectURL(e.target.files[0])
         })
