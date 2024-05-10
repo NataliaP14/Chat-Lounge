@@ -13,14 +13,8 @@ const Details = () => {
         if (!user) return;
         const userDocRef = doc(db,"users", currentUser.id)
         try {
-            let updatedBlockedUsers = [];
-            if (isReceiverBlocked) {
-                updatedBlockedUsers = user.blocked.filter(id => id !== currentUser.id);
-            } else {
-                updatedBlockedUsers = [...user.blocked, currentUser.id]
-            }
             await updateDoc(userDocRef, {
-                blocked: updatedBlockedUsers
+                blocked: isReceiverBlocked ? arrayRemove(user.id) : arrayUnion(user.id),
             });
             changeBlock()
 
@@ -33,7 +27,7 @@ const Details = () => {
         <div className='details'>
             <div className="user">
                 <img src= {user?.avatar || "./avatar.png"} alt="" />
-                <h2>{user?.username}</h2>
+                <h2>{user.username}</h2>
                 <p>Lorem ipsum dolor sit amet</p>
             </div>
             <div className="info">
@@ -91,11 +85,8 @@ const Details = () => {
                         <img src="./arrowUp.png" alt = ""/>
                     </div>
                 </div>
-                <button>{
-                isCurrentUserBlocked ? "You are Blocked" : isReceiverBlocked ? "User Blocked" : "Block User"
-                
-                
-}</button>
+                <button onClick = {handleBlock}>{
+                isCurrentUserBlocked ? "You are Blocked" : isReceiverBlocked ? "User Blocked" : "Block User"}</button>
                 <button className = "logout" onClick={() => auth.signOut()}>Logout</button>
             </div>
         </div>
