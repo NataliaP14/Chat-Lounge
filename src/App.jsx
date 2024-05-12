@@ -31,7 +31,15 @@ const App = () => {
   if (isLoading) return <div className = "loading">Loading...</div>
 
   return (
+    
     <div className='container'>
+      {currentUser && (
+      <div className="top-container">
+        <h1 className="title">Chat Application</h1>
+        <button className = "logout" onClick={() => auth.signOut()}>Logout</button>
+      </div>
+      )}
+      <div className="main-container">
       {
         //if there is a user, go to list chat and details, else go to login page
         currentUser ? (
@@ -42,6 +50,7 @@ const App = () => {
         </>
         ) : (<Login/>)
       }
+      </div>
       <Notification/>
     
 

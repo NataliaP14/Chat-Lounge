@@ -1,12 +1,15 @@
 .chatList {
     flex: 1;
     overflow: scroll;
+    
 
     .search {
         display: flex;
         align-items: center;
         gap: 20px;
         padding: 20px;
+        border-bottom: 1px solid grey;
+        margin-bottom: 15px;
     }
 
 
@@ -18,6 +21,7 @@
         gap: 20px;
         border-radius: 10px;
         padding: 10px;
+        
 
         img {
             width: 20px;
@@ -44,7 +48,11 @@
         gap: 20px;
         padding: 20px;
         cursor:pointer;
-        border-bottom: 1px solid grey;
+        border-radius: 10px;
+        margin-right: 17px;
+        margin-left: 17px;
+        margin-bottom: 10px;
+        height: 100px;
 
         img {
             width: 50px;
