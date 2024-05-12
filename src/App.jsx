@@ -35,7 +35,7 @@ const App = () => {
     <div className='container'>
       {currentUser && (
       <div className="top-container">
-        <h1 className="title">Chat Application</h1>
+        <h1 className="title">Chat Lounge</h1>
         <button className = "logout" onClick={() => auth.signOut()}>Logout</button>
       </div>
       )}

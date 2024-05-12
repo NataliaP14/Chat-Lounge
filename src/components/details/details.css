@@ -1,6 +1,6 @@
 .details {
    flex: 0.8;
-   margin-top: 100px;
+   margin-top: 130px;
 
    .user {
       padding: 30px 10px;
@@ -8,7 +8,7 @@
       flex-direction: column;
       align-items: center;
       gap: 10px;
-      border-bottom: 1px solid #dddddd35;
+      border-bottom: 1px solid rgb(85, 84, 84);
 
       img {
          width: 200px;
@@ -30,7 +30,7 @@
    }
       button {
          padding: 10px 20px;
-         background-color: rgba(17,25,30,0.5);
+         background-color: rgba(10, 10, 10, 0.35);
          color: rgb(255, 255, 255); 
          border: none;
          border-radius: 5px;
@@ -40,14 +40,6 @@
          
          &:hover {
             background-color: rgba(255, 0, 51, 0.553);;
-         }
-         &.logout {
-            padding: 10px;
-            background-color: rgba(17,25,30,0.5);
-            &:hover {
-               background-color: #5183fe;
-            }
-            
          }
       }
       

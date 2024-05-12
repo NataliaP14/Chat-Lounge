@@ -127,7 +127,7 @@ const handleSend = async() => {
                         <p>
                         {message.text}
                         </p>
-                       {/* <span>{message}</span>*/}
+                      
                     </div>
                 </div>
             ))

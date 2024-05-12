@@ -84,7 +84,7 @@ const ChatList = () => {
         {filteredChats.map((chat) => (
           <div className="item" key = {chat.chatId} onClick={()=>handleSelect(chat)}
            style={{
-            backgroundColor: chat?.isSeen ? "rgba(17,25,30,0.5)" : "5183fe",
+            backgroundColor: chat?.isSeen ? "rgba(10, 10, 10, 0.35)" : "rgb(134, 60, 177)",
             
            }}>
            <img src={chat.user.blocked.includes(currentUser.id) ? "./avatar.png" : chat.user.avatar || "./avatar.png"} alt=""/>
