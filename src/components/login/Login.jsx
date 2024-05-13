@@ -14,6 +14,7 @@ const Login = () => {
     })
 
     const [loading, setLoading] = useState(false)
+    const [isLogin, setIsLogin] = useState(true)
 
     
 
@@ -86,31 +87,58 @@ const Login = () => {
         }
     }
 
+    const toggleLogin = (isLogin) => {
+        setIsLogin(isLogin);
+        const slider = document.querySelector(".slider");
+        const formSection = document.querySelector(".form-section");
+        
+        if (!isLogin) {
+            slider.classList.add("moveslider");
+            formSection.classList.add("form-section-move");
+        } else {
+            slider.classList.remove("moveslider");
+            formSection.classList.remove("form-section-move");
+        }
+    };
+
     return (
-        <div className = "login">
-            <div className="item">
-                <h2>Welcome back</h2>
-                <form onSubmit = {handleLogin}>
-                    <input type = "text" placeholder = "Email" name = "email"/> 
-                    <input type = "password" placeholder = "Password" name = "password"/> 
-                    <button disbaled = {loading}>{loading ? "Loading" : "Sign In"}</button>
-                </form>
+
+        <div className="main">
+            <div className="top">
+                <div class="slider"></div>
+                <div className="top-button">
+                    <button className={isLogin ? "login active" : "login"} onClick={() => toggleLogin(true)}>Login</button>
+                    <button className={!isLogin ? "signup active" : "signup"} onClick={() => toggleLogin(false)}>Signup</button>
+                </div>
             </div>
-            <div className="separator"></div>
-            <div className="item">
-                <h2>Create Account</h2>
-                <form onSubmit = {handleRegister}>
-                <label htmlFor="file">
-                    <img src={avatar.url || "./avatar.png"} alt="" />
-                    Upload Image</label>
-                <input type = "file" id = "file" style = {{display: "none"}} onChange = {handleAvatar}/> 
-                <input type = "text" placeholder = "Username" name = "username"/>
-                <input type = "text" placeholder = "Email" name = "email"/>  
-                <input type = "password" placeholder = "Password" name = "password"/> 
-                <button disbaled = {loading}>{loading ? "Loading" : "Sign Up"}</button>
-                </form>
+            <div className="form">
+                <div className={`login-box ${isLogin ? "active" : ""}`}>
+                    <h2>Welcome back</h2>
+                    <form onSubmit={handleLogin}>
+                        <input className="ele" type="text" placeholder="Email" name="email" />
+                        <input className="ele" type="password" placeholder="Password" name="password" />
+                        <button className = "submit" disabled={loading}>{loading ? "Loading" : "Sign In"}</button>
+                    </form>
+                </div>
+    
+                <div className={`signup-box ${!isLogin ? "active" : ""}`}>
+                    <h2>Create Account</h2>
+                    <form onSubmit={handleRegister}>
+                        <label htmlFor="file">
+                            <img src={avatar.url || "./avatar.png"} alt="" />
+                            Upload Image
+                        </label>
+                        <input type="file" id="file" style={{ display: "none" }} onChange={handleAvatar} />
+                        <input type="text" placeholder="Username" name="username" />
+                        <input type="text" placeholder="Email" name="email" />
+                        <input type="password" placeholder="Password" name="password" />
+                        <button className = "submit" disabled={loading}>{loading ? "Loading" : "Sign Up"}</button>
+                    </form>
+                </div>
             </div>
         </div>
+        
+        
     )
 };
 

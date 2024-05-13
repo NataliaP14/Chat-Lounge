@@ -48,7 +48,8 @@ const App = () => {
           {chatId && <Chat/>}
           {chatId && <Details/>}
         </>
-        ) : (<Login/>)
+        ) : (
+        <Login/>)
       }
       </div>
       <Notification/>
