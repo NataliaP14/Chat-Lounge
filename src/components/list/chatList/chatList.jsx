@@ -17,13 +17,15 @@ const ChatList = () => {
 
   useEffect (() => {
     const unSub = onSnapshot(doc(db, "userchats", currentUser.id), async (response) => {
-      const items = response.data().chats
+
+      
+      const items = response.data().chats;
 
       const promises = items.map( async (item) => {
         const userDocRef = doc(db, "users", item.receiverId);
         const userDocSnap = await getDoc(userDocRef);
 
-        const user = userDocSnap.data();
+        const user = userDocSnap.data() || [];
 
         //returning chat info
         return {...item, user};
@@ -32,6 +34,7 @@ const ChatList = () => {
       const chatData = await Promise.all(promises)
 
       setChats(chatData.sort((a,b) => b.updatedAt - a.updatedAt));
+    
     });
 
     return () => {

@@ -53,7 +53,7 @@ const Login = () => {
 
         const formData = new FormData(e.target)
 
-        const {username, email,password} = Object.fromEntries(formData);
+        const {username, email, password} = Object.fromEntries(formData);
 
         try {
             //creating an account and putting in database
@@ -90,43 +90,45 @@ const Login = () => {
     const toggleLogin = (isLogin) => {
         setIsLogin(isLogin);
         const slider = document.querySelector(".slider");
-        const formSection = document.querySelector(".form-section");
+        const formSection = document.querySelector(".form");
         
         if (!isLogin) {
             slider.classList.add("moveslider");
-            formSection.classList.add("form-section-move");
+            formSection.classList.add("form-move");
         } else {
             slider.classList.remove("moveslider");
-            formSection.classList.remove("form-section-move");
+            formSection.classList.remove("form-move");
         }
     };
 
     return (
 
+    <div className = "top">
+       
+
         <div className="main">
-            <div className="top">
-                <div class="slider"></div>
+                <div className="slider"></div>
                 <div className="top-button">
                     <button className={isLogin ? "login active" : "login"} onClick={() => toggleLogin(true)}>Login</button>
                     <button className={!isLogin ? "signup active" : "signup"} onClick={() => toggleLogin(false)}>Signup</button>
-                </div>
+                
             </div>
             <div className="form">
                 <div className={`login-box ${isLogin ? "active" : ""}`}>
-                    <h2>Welcome back</h2>
+                   <div className = "text"><h2>Welcome back</h2></div> 
                     <form onSubmit={handleLogin}>
-                        <input className="ele" type="text" placeholder="Email" name="email" />
-                        <input className="ele" type="password" placeholder="Password" name="password" />
+                        <input type="text" placeholder="Email" name="email" />
+                        <input type="password" placeholder="Password" name="password" />
                         <button className = "submit" disabled={loading}>{loading ? "Loading" : "Sign In"}</button>
                     </form>
                 </div>
     
                 <div className={`signup-box ${!isLogin ? "active" : ""}`}>
-                    <h2>Create Account</h2>
+                <div className = "text"><h2>Create Account</h2></div> 
                     <form onSubmit={handleRegister}>
-                        <label htmlFor="file">
+                        <label htmlFor="file" className = "file-label">
                             <img src={avatar.url || "./avatar.png"} alt="" />
-                            Upload Image
+                            <p>Upload Image</p>
                         </label>
                         <input type="file" id="file" style={{ display: "none" }} onChange={handleAvatar} />
                         <input type="text" placeholder="Username" name="username" />
@@ -137,7 +139,7 @@ const Login = () => {
                 </div>
             </div>
         </div>
-        
+    </div>     
         
     )
 };

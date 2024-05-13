@@ -1,89 +1,251 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    align-items: center;
-    justify-content: center;
-   
-}
+
 
 
 .main {
-   width: 50%;
-   height: 50%;
-   border-radius: 10px;
-   background-color: white;
-   flex-direction: column;
-   display: flex;
-   position: relative;
-   overflow: hidden;
-   box-shadow: 0px 0px 20px black;
+    height: 55%;
+    width: 52%;
+    background-color: rgba(10, 10, 10, 0.2);
+    box-shadow: 8px 8px 20px rgb(0, 0, 0);
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    top: 45%;
+    left: 90%;
+    transform: translate(-50%, -50%);
    
-   .top {
-    padding: 20px;
-   
-   } 
-
-   .form-section {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-    
-   }
-   h1, h2 {
-    color: black;
-   }
-   
-   .top-button {
-        height: 60px;
-        width: 300px;
-       
-        box-shadow: 0px 0px 10px rgb(0, 0, 0);
-        border-radius: 50px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-   }
-   .submit {
-        border: none;
-        background-color: rgba(17,25,40,0.2);
-        height: 40px;
-        border-radius: 10px;
-        padding: 5px;
-        cursor: pointer;
-
-        &:hover {
-            background-color: rgb(134, 60, 177);  
-        }
-   }
-
-   .login, .signup {
-        font-size: 20px;
-        border: none;
-        outline: none;
-        background-color: transparent;
-        position: relative;
-        cursor: pointer;
-   }
-   .slider {
-        height: 60px;
-        width: 150px;
-        border-radius: 50px;
-        background-color: rgb(134, 60, 177);
-        position: absolute;
-        top: 20px;
-        left: 100px;
-        transition: all 0.5s ease-in-out
-   }
-   .moveslider {
-        left: 225px;
-   }
-    
-
-
-.form {
-
 }
+ 
+.top-button {
+    height: 60px;
+    width: 300px;
+    margin: 20px auto;
+    box-shadow: 0px 0px 20px rgb(0, 0, 0);
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.text {
+    color: white;
+}
+.login,
+.signup {
+    font-size: 22px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+    color: white;
+}
+ 
+.slider {
+    height: 60px;
+    width: 150px;
+    border-radius: 50px;
+    background-image: linear-gradient(to right,
+    rgb(134, 60, 177),
+    rgb(134, 60, 177));
+    position: absolute;
+    top: 20px;
+    left: 90px;
+    transition: all 0.5s ease-in-out;
+}
+ 
+.moveslider {
+    left: 250px;
+}
+ 
+.form {
+    height: 500px;
+    width: 1000px;
+    padding: 20px 0;
+    display: flex;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+    left: 0px;
+    
+}
+ 
+.form-move {
+    left: -500px;
+}
+ 
+.login-box,
+.signup-box {
+    height: 100%;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 40px;
+    
+}
+ 
+.login-box {
+    gap: 40px;
+    
+}
+ 
+.signup-box {
+    gap: 30px;
+}
+.file-label {
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+   text-decoration: underline;
+
+   img {
+    height: 80px;
+    width :80px;
+    border-radius: 10px;
+    margin-right: 20px;
+    margin-left: 100px;
+}
+ 
+}
+ 
+input {
+    height: 50px;
+    width: 400px;
+    outline: none;
+    border: none;
+    color: rgb(77, 77, 77);
+    background-color: rgba(10, 10, 10, 0.35);
+    border-radius: 10px;
+    padding-left: 30px;
+    font-size: 18px;
+    margin: 10px;
+}
+ 
+.submit {
+    height: 50px;
+    width: 100px;
+    border-radius: 10px;
+    background-color: rgba(10, 10, 10, 0.35);
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    margin-left: 35%;
+    
+
+    &:hover {
+        background-color: rgb(134, 60, 177);  
+    }
+}
+
+
+ 
+@media screen and (max-width: 650px) {
+    .main {
+        height: 600px;
+        width: 300px;
+    }
+ 
+    .top-button {
+        height: 50px;
+        width: 200px;
+        margin: 20px auto;
+    }
+ 
+    .login,
+    .signup {
+        font-size: 19px;
+    }
+ 
+    .slider {
+        height: 50px;
+        width: 100px;
+        left: 50px;
+    }
+ 
+    .moveslider {
+        left: 150px;
+    }
+ 
+    .form {
+        height: 500px;
+        width: 600px;
+    }
+ 
+    .form-move {
+        left: -300px;
+    }
+ 
+    .login-box,
+    .signup-box {
+        height: 100%;
+        width: 300px;
+    }
+ 
+    input {
+        height: 50px;
+        width: 250px;
+        font-size: 15px;
+    }
+ 
+    .submit {
+        height: 50px;
+        width: 130px;
+        font-size: 19px;
+    }
+}
+ 
+@media screen and (max-width: 320px) {
+    .main {
+        height: 600px;
+        width: 250px;
+    }
+ 
+    .top-button {
+        height: 50px;
+        width: 200px;
+        margin: 20px auto;
+    }
+ 
+    .login,
+    .signup {
+        font-size: 19px;
+    }
+ 
+    .slider {
+        height: 50px;
+        width: 100px;
+        left: 27px;
+    }
+ 
+    .moveslider {
+        left: 127px;
+    }
+ 
+    .form {
+        height: 500px;
+        width: 500px;
+    }
+ 
+    .form-move {
+        left: -250px;
+    }
+ 
+    .login-box,
+    .signup-box {
+        height: 100%;
+        width: 250px;
+    }
+ 
+    input {
+        height: 50px;
+        width: 220px;
+        font-size: 15px;
+    }
+ 
+    .submit {
+        height: 50px;
+        width: 130px;
+        font-size: 19px;
+    }
 }
