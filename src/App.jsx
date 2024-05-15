@@ -33,12 +33,14 @@ const App = () => {
   return (
     
     <div className='container'>
-      {currentUser && (
+     
       <div className="top-container">
         <h1 className="title">Chat Lounge</h1>
+      {currentUser && (
         <button className = "logout" onClick={() => auth.signOut()}>Logout</button>
-      </div>
       )}
+      </div>
+     
       <div className="main-container">
       {
         //if there is a user, go to list chat and details, else go to login page

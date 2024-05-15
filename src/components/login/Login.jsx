@@ -110,7 +110,7 @@ const Login = () => {
                 <div className="slider"></div>
                 <div className="top-button">
                     <button className={isLogin ? "login active" : "login"} onClick={() => toggleLogin(true)}>Login</button>
-                    <button className={!isLogin ? "signup active" : "signup"} onClick={() => toggleLogin(false)}>Signup</button>
+                    <button className={!isLogin ? "signup active" : "signup"} onClick={() => toggleLogin(false)}>Sign Up</button>
                 
             </div>
             <div className="form">

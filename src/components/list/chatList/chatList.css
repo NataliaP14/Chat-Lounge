@@ -1,7 +1,8 @@
 .chatList {
-    flex: 0.5;
+    flex: 1;
     overflow: scroll;
-    width: 81.5%;
+ 
+    
 
     .search {
         display: flex;
@@ -10,25 +11,26 @@
         padding: 20px;
         border-bottom: 1px solid rgb(85, 84, 84);
         margin-bottom: 15px;
+        
     }
 
 
     .searchBar {
-        flex: 0.5;
+        flex: 1;
         background: rgba(10, 10, 10, 0.35);
         display:flex;
         align-items:center;
-        gap: 2px;
+        gap: 10px;
         border-radius: 10px;
-        width: 90%;
-        height: 55px;
-        padding-left: 10px;
+        padding: 5px;
+        height: 50px;
+        max-width: 100%;
+        
         
 
         img {
             width: 20px;
             height: 20px;
-            
         }
     }
 
@@ -37,6 +39,7 @@
         border: none;
         outline: none;
         color: white;   
+       
     }
 
     .add {
@@ -56,7 +59,8 @@
         margin-left: 17px;
         margin-bottom: 10px;
         height: 100px;
-        width: 92%;
+        
+       
 
         img {
             width: 50px;
@@ -80,6 +84,7 @@
             font-weight: 300;
         }
     }
+    
 }
 
 
