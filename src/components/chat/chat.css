@@ -1,5 +1,6 @@
 .chat {
     flex: 3;
+    margin-left: -100px;
     border-left: 1px solid rgb(85, 84, 84);
     border-right: 1px solid rgb(85, 84, 84);
     height: 100%;

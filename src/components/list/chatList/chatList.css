@@ -1,7 +1,7 @@
 .chatList {
-    flex: 1;
+    flex: 0.5;
     overflow: scroll;
-    
+    width: 81.5%;
 
     .search {
         display: flex;
@@ -14,18 +14,21 @@
 
 
     .searchBar {
-        flex: 1;
+        flex: 0.5;
         background: rgba(10, 10, 10, 0.35);
         display:flex;
         align-items:center;
-        gap: 20px;
+        gap: 2px;
         border-radius: 10px;
-        padding: 10px;
+        width: 90%;
+        height: 55px;
+        padding-left: 10px;
         
 
         img {
             width: 20px;
             height: 20px;
+            
         }
     }
 
@@ -53,6 +56,7 @@
         margin-left: 17px;
         margin-bottom: 10px;
         height: 100px;
+        width: 92%;
 
         img {
             width: 50px;
